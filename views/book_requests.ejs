@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Requests</title>
+    <link rel="stylesheet" href="assets/css/book-requests/book-requests.css" />
+    <link rel="stylesheet" href="assets/css/book-requests/book-request-main-container.css" />
+    <link rel="stylesheet" href="assets/css/book-requests/request-list-item.css" />
+    <link rel="stylesheet" href="assets/css/book-requests/book-card.css">
+    <script type="module" src="firebase/check_auth.js"></script>
+    <script type="module" src="firebase/functions/filter-request.js"></script>
+    <script type="module">
+      const requestListContainer = document.querySelector('.request-list-container');
+      import { getDatabase, ref, child, get, onValue } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-database.js';
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js';
+      import firebaseConfig from '/firebase/firebaseConfig.js';
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase();
+
+      const reference = ref(db, 'Borrowed Books/');
+      onValue(reference, (snapshot) => {
+        requestListContainer.innerHTML = '';
+        const userData = snapshot.val();
+        if (userData) {
+          Object.keys(userData).forEach((userId) => {
+            const userTransactionsRef = ref(db, `Borrowed Books/${userId}`);
+            onValue(userTransactionsRef, (userSnapshot) => {
+              const userTransactions = userSnapshot.val();
+              Object.keys(userTransactions).forEach((key) => {
+                const transact = ref(db, `Borrowed Books/${userId}/${key}`);
+                onValue(transact, (data) => {
+                  const content = data.val();
+                  if (content['Status'] === 'pending') {
+                    const item = document.createElement('div');
+                    item.classList.add('request-item');
+                    const id = document.createElement('p');
+                    id.textContent = key;
+                    item.appendChild(id);
+                    item.addEventListener('click', () => {
+                      document.getElementById('request-id').textContent = key;
+                    });
+                    requestListContainer.appendChild(item);
+                  }
+                });
+              });
+            });
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header></header>
+      <main>
+        <div class="requests-container">
+          <form action="" class="search-box">
+            <input type="search" name="search-field" id="search-field" required />
+            <label for="search-field">Search Borrow ID</label>
+            <button type="submit" id="search-btn"><img src="images/requests/search.svg" alt="" /></button>
+          </form>
+          <div class="main-container">
+            <div class="request-list-container"></div>
+          </div>
+        </div>
+        <div class="preview-container">
+          <header>
+          <h2 id="request-id"></h2>            
+        </header>
+        <p>Book Requested</p>
+        <main>
+          <div class="details-container">
+            <div class="requested-book-list-container">
+              <div class="book-card"></div>
+              <div class="book-card"></div>
+              <div class="book-card"></div>
+              <div class="book-card"></div>
+              <div class="book-card"></div>
+            </div>
+          </div>
+        </main>
+        <footer>
+          <div class="action-button-container">
+            <button>Accept</button>
+            <button>Delete</button>
+          </div>
+        </footer>
+        </div>
+      </main>
+      </div>
+    </div>
+  </body>
+  <script></script>
+</html>

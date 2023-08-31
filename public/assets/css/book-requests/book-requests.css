@@ -1,0 +1,117 @@
+@import url(../../../fonts/product-sans-font.css);
+
+body {
+  margin: 0;
+  font-family: 'Product Sans Regular';
+  overflow: hidden;
+}
+/* *::-webkit-scrollbar {
+  display: none;
+} */
+.wrapper {
+  width: 100%;
+  height: 92dvh;
+  background-color: green;
+}
+header {
+  height: 4em;
+  background-color: #333;
+}
+main {
+  height: 100%;
+  display: flex;
+}
+.requests-container {
+  height: 100%;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  flex: 2.5;
+}
+.preview-container {
+  flex: 1;
+  background-color: lightslategrey;
+  height: 100%;
+}
+.search-box {
+  width: 20em;
+  height: 3em;
+  display: flex;
+  margin: 1em;
+  border-radius: 5px;
+  position: relative;
+  align-self: flex-end;
+  border: 3px solid #888;
+}
+#search-field {
+  flex: 6;
+  border: none;
+  padding-left: 1em;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+#search-field:focus {
+  outline: none;
+}
+#search-field:focus ~ label,
+#search-field:valid ~ label {
+  transform: translate(-5.5px, -21px);
+  font-size: 0.8em;
+
+}
+#search-field:focus ~ label::after,
+#search-field:valid ~ label::after {
+  transform: translateX(-98%);
+}
+#search-field:focus ~ label::before,
+#search-field:valid ~ label::before {
+  transform: translateX(98%);
+
+}
+form label {
+  position: absolute;
+  margin: 13px 13px;
+  padding: 0 10px;
+  transition: 0.3s ease;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: lightgrey;
+  color: #444;
+}
+form label::after {
+  content: '';
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  background-color: #888;
+  transform: translateX(-120%);
+  transition: 0.3s ease;
+}
+form label::before {
+  content: '';
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  background-color: #888;
+  transform: translateX(120%);
+  transition: 0.3s ease;
+}
+
+#search-btn {
+  flex: 1;
+  border: none;
+  cursor: pointer;
+  background-color: #888;
+}
+#search-btn img{
+  height: 2em;
+  filter: invert();
+  margin-top: .3em;
+  padding-left: .5em;
+}
+#search-btn:focus{
+  outline: none;
+}
+#combo{
+  
+}

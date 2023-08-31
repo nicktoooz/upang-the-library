@@ -1,0 +1,28 @@
+@import url(../../../fonts/product-sans-font.css);
+body{
+    margin: 0;
+    font-family: 'Product Sans Regular';
+}
+.wrapper{
+    height: 100dvh;
+    display: flex;
+    overflow: hidden;
+
+}
+.side-design{
+    background-color: rgb(197, 197, 197);
+    flex: 1;
+
+}
+.title-sec{
+    margin: 4em 0 0 3em;
+   
+}
+.title-sec h1{
+    font-size: 3.5em;
+}
+.title-sec h4{
+    font-size: 2em;
+    line-height: 0;
+    font-family: 'Product Sans Medium';
+}
