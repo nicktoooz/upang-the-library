@@ -6,6 +6,8 @@
     <title>Sign-Up</title>
     <link rel="stylesheet" href="assets/css/sign-up/sign-up.css" />
     <link rel="stylesheet" href="assets/css/sign-up/sign-up_1.css" />
+    <link rel="stylesheet" href="assets/css/sign-up/sign-up_2.css" />
+
     <script type="module" src="firebase/sign-up.js"></script>
   </head>
   <body>
@@ -17,9 +19,25 @@
         </div>
       </aside>
       <div class="sign-up-main-container">
-        <div class="sign-up-card page-1"><button class="nav-btn" id="nav-page-2">Next</button></div>
-        <div class="sign-up-card page-2"><button class="nav-btn" id="nav-page-3">Next</button></div>
-        <div class="sign-up-card page-3"><button class="nav-btn" id="nav-page-4">Finish</button></div>
+        <div class="sign-up-card page-1">
+          <form action="" id="credentials-form">
+            <input type="email" name="email" id="email" placeholder="Email Address">
+            <input type="password" name="password" id="password" placeholder="Password">
+          </form>
+          <button class="nav-btn" id="nav-page-2">Next</button>
+        </div>
+        <div class="sign-up-card page-2">
+          <form action="" id="user-info-form">
+            <input type="text" name="firstname" id=""placeholder="First Name">
+            <input type="text" name="middlename" id="" placeholder="Middle Name">
+            <input type="text" name="lastname" id="" placeholder="Last Name">
+            <input type="date" name="birthdate" id="" placeholder="Birthdate">
+            <button class="nav-btn" id="nav-page-3">Next</button>
+          </form>
+        </div>
+        <div class="sign-up-card page-3">
+          <button class="nav-btn" id="nav-page-4">Finish</button>
+        </div>
       </div>
     </div>
   </body>

@@ -8,6 +8,9 @@
   width: 100%;
   position: absolute;
   transform: translateX(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .sign-up-card.page-1 {
   transform: translate(0);
@@ -25,4 +28,20 @@
 }
 .sign-up-card.page-3.active {
   transform: translate(0);
+}
+
+#credentials-form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input{
+  width: 40em;
+  height: 5em;
+  padding-left: 2em;
+  border: none;
+  border-radius: 5px;
+}
+input:focus{
+  outline: none;
 }
