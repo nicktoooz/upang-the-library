@@ -181,3 +181,19 @@ label::before {
     transform: translateX(0%);
   }
 }
+
+.filler{
+  width: 20em;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.442);
+  align-self: center;
+  margin-top: 20px;
+}
+#sign-up{
+  font-family: 'Product Sans Regular';
+  align-self: center;
+}
+#sign-up span a{
+  text-decoration: none;
+  color: rgb(56, 56, 255);
+}

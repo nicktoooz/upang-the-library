@@ -9,6 +9,7 @@
   padding-left: 2em;
   border: none;
   border-radius: 5px;
+  
 }
 #user-info-form input:focus {
   outline: none;
