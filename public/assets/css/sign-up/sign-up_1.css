@@ -7,16 +7,22 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: yellow;
   transform: translateX(100%);
 }
 .sign-up-card.page-1 {
   transform: translate(0);
+  background-color: yellow;
 }
 
 .sign-up-card.page-2 {
   background-color: blue;
 }
+.sign-up-card.page-3 {
+  background-color: green;
+}
 .sign-up-card.page-2.active {
+  transform: translate(0);
+}
+.sign-up-card.page-3.active {
   transform: translate(0);
 }

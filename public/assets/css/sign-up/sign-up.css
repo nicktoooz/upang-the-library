@@ -26,3 +26,20 @@ body{
     line-height: 0;
     font-family: 'Product Sans Medium';
 }
+
+
+
+.nav-btn{
+    font-size: 1.5em;
+    padding: .5em 3em;
+    border: none;
+    border-radius: 5px;
+    background-color: #2962FF;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 4em;
+    margin-right: 4em;
+    
+}
